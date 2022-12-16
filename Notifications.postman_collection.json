@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "741528a4-99f8-43fe-a575-1187d757dd08",
+		"name": "Notifications - Ignite Lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24018403"
+	},
+	"item": [
+		{
+			"name": "Create notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"Você tem uma nova solicitação de amizade\",\n    \"category\": \"social\",\n    \"recipientId\": \"fb310f3a-cb92-4958-a18a-b7813ca1bdcd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/notifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get recipiente notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notifications/from/fb310f3a-cb92-4958-a18a-b7813ca1bdcd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications",
+						"from",
+						"fb310f3a-cb92-4958-a18a-b7813ca1bdcd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count recipiente notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notifications/count/from/fb310f3a-cb92-4958-a18a-b7813ca1bdcd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications",
+						"count",
+						"from",
+						"fb310f3a-cb92-4958-a18a-b7813ca1bdcd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel a notification",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notifications/ed978409-479e-4e0b-99fa-cdf3bcdeaadf/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications",
+						"ed978409-479e-4e0b-99fa-cdf3bcdeaadf",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read a notification",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"Você tem uma nova solicitação de amizade\",\n    \"category\": \"social\",\n    \"recipientId\": \"fb310f3a-cb92-4958-a18a-b7813ca1bdcd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/notifications/ed978409-479e-4e0b-99fa-cdf3bcdeaadf/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications",
+						"ed978409-479e-4e0b-99fa-cdf3bcdeaadf",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnRead a notification",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"Você tem uma nova solicitação de amizade\",\n    \"category\": \"social\",\n    \"recipientId\": \"fb310f3a-cb92-4958-a18a-b7813ca1bdcd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/notifications/ed978409-479e-4e0b-99fa-cdf3bcdeaadf/unread",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications",
+						"ed978409-479e-4e0b-99fa-cdf3bcdeaadf",
+						"unread"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
