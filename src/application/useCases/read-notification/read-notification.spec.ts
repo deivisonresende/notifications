@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { ReadNotification } from './read-notification';
 import { InMemoryNotificationsRepository } from '@test/repositories/in-memory-notifications-repository';
-import { NotificationNotFound } from './errors/notification-not-found';
+import { NotificationNotFound } from '../../errors/notification-not-found';
 import { makeNotification } from '@test/factories/notification-factory';
 
 describe('Read notification', () => {

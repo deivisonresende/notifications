@@ -1,13 +1,13 @@
 import { randomUUID } from 'node:crypto';
-import { SendNotification } from './send-notification';
+import { CreateNotification } from './create-notification';
 import { InMemoryNotificationsRepository } from '@test/repositories/in-memory-notifications-repository';
 
 describe('Send notification', () => {
-  it('should be able to send a notification', async () => {
+  it('should be able to create a notification', async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
-    const sendNotification = new SendNotification(notificationsRepository);
+    const createNotification = new CreateNotification(notificationsRepository);
 
-    const { notification } = await sendNotification.execute({
+    const { notification } = await createNotification.execute({
       content: 'This a notification',
       category: 'social',
       recipientId: randomUUID(),

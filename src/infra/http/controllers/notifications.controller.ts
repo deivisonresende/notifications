@@ -1,17 +1,17 @@
-import { CancelNotification } from '@application/use-cases/cancel-notification';
-import { CountRecipientNotification } from '@application/use-cases/count-recipient-notification';
-import { GetRecipientNotification } from '@application/use-cases/get-recipient-notification';
-import { ReadNotification } from '@application/use-cases/read-notification';
-import { UnReadNotification } from '@application/use-cases/unread-notification';
+import { CancelNotification } from '@application/useCases/cancel-notification/cancel-notification';
+import { CountRecipientNotification } from '@application/useCases/count-recipient-notification/count-recipient-notification';
+import { GetRecipientNotification } from '@application/useCases/get-recipient-notification/get-recipient-notification';
+import { ReadNotification } from '@application/useCases/read-notification/read-notification';
+import { UnReadNotification } from '@application/useCases/unread-notification/unread-notification';
 import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
-import { SendNotification } from 'src/application/use-cases/send-notification';
+import { CreateNotification } from 'src/application/useCases/create-notification/create-notification';
 import { CreateNotificationBody } from '../dtos/create-notification-body';
 import { NotificationViewModel } from '../view-models/notification-view-model';
 
 @Controller('notifications')
 export class NotificationController {
   constructor(
-    private sendNotification: SendNotification,
+    private createNotification: CreateNotification,
     private cancelNotification: CancelNotification,
     private readNotification: ReadNotification,
     private unreadNotification: UnReadNotification,
@@ -22,7 +22,7 @@ export class NotificationController {
   @Post()
   async create(@Body() body: CreateNotificationBody) {
     const { recipientId, content, category } = body;
-    const { notification } = await this.sendNotification.execute({
+    const { notification } = await this.createNotification.execute({
       recipientId,
       content,
       category,

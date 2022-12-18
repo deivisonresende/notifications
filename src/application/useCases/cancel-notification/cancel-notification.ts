@@ -1,6 +1,6 @@
-import { NotificationsRepository } from '../repositories/notification-repository';
+import { NotificationsRepository } from '../../repositories/notification-repository';
 import { Injectable } from '@nestjs/common';
-import { NotificationNotFound } from './errors/notification-not-found';
+import { NotificationNotFound } from '../../errors/notification-not-found';
 
 interface IRequestCancelNotification {
   notificationId: string;
@@ -23,7 +23,7 @@ export class CancelNotification {
     if (!notification) throw new NotificationNotFound();
 
     notification.cancel();
-    console.log('notification', notification);
+
     await this.notificationsRepository.save(notification);
   }
 }

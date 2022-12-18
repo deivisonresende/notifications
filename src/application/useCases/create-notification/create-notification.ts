@@ -1,24 +1,24 @@
-import { Notification } from '../entities/notification';
-import { Content } from '../entities/content';
-import { NotificationsRepository } from '../repositories/notification-repository';
+import { Notification } from '../../entities/notification';
+import { Content } from '../../entities/content';
+import { NotificationsRepository } from '../../repositories/notification-repository';
 import { Injectable } from '@nestjs/common';
 
-interface IRequestSendNotification {
+interface IRequestCreateNotification {
   recipientId: string;
   content: string;
   category: string;
 }
 
-interface IResponseSendNotification {
+interface IResponseCreateNotification {
   notification: Notification;
 }
 
 @Injectable()
-export class SendNotification {
+export class CreateNotification {
   constructor(private notificationsRepository: NotificationsRepository) {}
   async execute(
-    request: IRequestSendNotification,
-  ): Promise<IResponseSendNotification> {
+    request: IRequestCreateNotification,
+  ): Promise<IResponseCreateNotification> {
     const notification = new Notification({
       ...request,
       content: new Content(request.content),
