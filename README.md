@@ -15,9 +15,10 @@ In additional, to make the microservice not so simple, we use the pub/sub patter
 
 ## Usage
 
-
 - Sign up on Upstash and create a Kafka cluster 
-- Clone the repository;
+- Clone this repository;
 - Copy your topic's connection settings, than paste on `super` in src/infra/messaging/kafka/kafka-consumer.service.ts
-- Install the dependences with `yarn` or `npm install`;
+- Install the dependences with `npm i`;
 - Start the server with `npm run start:dev`;
+
+In the Root of the project, there is a postman collection with the requests of the use cases mentioned above.
