@@ -1,6 +1,6 @@
 <h1 align="center">Notification microservice</h1>
 
-A Node.js back-end API developed as an exercise of Nest.js and its weakly coupled application architecture, as well as its native microservices support. 
+A simple Node.js backend microservice developed as an exercise of Nest.js and its weakly coupled application architecture, as well as its native microservices support.
 
 This API has the following use cases:
 
